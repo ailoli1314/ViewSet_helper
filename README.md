@@ -7,15 +7,21 @@
 例：
 
 public class shoplistbean {
+
     @TextviewSetUtil(id = R.id.price,head = "¥")
     private String price;
+    
     @TextviewSetUtil(id= R.id.pic,isiv = true)
     private String focusImg;
+    
     @TextviewSetUtil(id=R.id.title)
     private String title;
+    
     ...
 }
 
+
 shoplistbean item；
+
 
 TextviewSethelp.bind(item.getClass(),context,item);
