@@ -1,8 +1,6 @@
 # ViewSet_helper
-偷懒神器，在field 上使用注解 绑定id， 为textview，imageview设置展示数据
-
-
-
+偷懒神器，在field 上使用注解 绑定id， 为textview，imageview设置展示数据，设置点击事件
+为class bean类设置上下文，用于进行ui操作
 
 例：
 
@@ -35,8 +33,11 @@ public class shoplistbean extends Context_IF{
 
 @setContext
 public class Context_IF {
+
     public transient View view_IF = null;
+
     public transient Activity activity_IF = null;
+
     public transient Context CONTEXT_IF = null;
 
     public View getView_IF() {
@@ -104,4 +105,5 @@ shoplistbean item；
 
 
 GuiBhelp.bind(item.getClass(),context,item);//具体实现查看GuiBhelp 类
+
 GuiBhelp.setview(item.getClass(),context,item);
