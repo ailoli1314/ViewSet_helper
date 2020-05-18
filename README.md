@@ -34,6 +34,7 @@ public class shoplistbean extends Context_IF{
 }
 
 @setContext
+
 public class Context_IF {
 
     public transient View view_IF = null;
@@ -114,7 +115,9 @@ GuiBhelp.setview(item.getClass(),context,item);
 点击事件也可不写，在bean类中实现点击操作
 
 List<Object> fenleilist=new ArrayList<>();
+    
 fenleilist.add(new shoplistbean());
+
 adapter_ask=new SoQuickAdapter(R.layout.wendapublish_fenleiitem,fenleilist,new HashMap<Integer, View.OnClickListener>(){
             {
               
@@ -127,7 +130,9 @@ adapter_ask=new SoQuickAdapter(R.layout.wendapublish_fenleiitem,fenleilist,new H
                 
             }
         });
+        
  recycles.setLayoutManager(manager);
+ 
  recycles.setAdapter(adapter_ask);
  
  具体实现查看SoQuickAdapter文件
