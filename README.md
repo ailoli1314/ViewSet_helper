@@ -1,6 +1,8 @@
 # ViewSet_helper
 偷懒神器，在field 上使用注解 绑定id， 为textview，imageview设置展示数据，设置点击事件
-为class bean类设置上下文，用于进行ui操作
+为class bean类设置上下文，用于进行ui操作。
+据此实现了一个万能适配器，通用的adapter，逻辑操作
+在bean类中实现，可查看SoQuickAdapter文件
 
 例：
 
@@ -107,3 +109,25 @@ shoplistbean item；
 GuiBhelp.bind(item.getClass(),context,item);//具体实现查看GuiBhelp 类
 
 GuiBhelp.setview(item.getClass(),context,item);
+
+通用的万能适配器例子：
+点击事件也可不写，在bean类中实现点击操作
+
+List<Object> fenleilist=new ArrayList<>();
+fenleilist.add(new shoplistbean());
+adapter_ask=new SoQuickAdapter(R.layout.wendapublish_fenleiitem,fenleilist,new HashMap<Integer, View.OnClickListener>(){
+            {
+              
+                put(R.id.bg_linear, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //bg_linear 的点击实现
+                    }
+                });
+                
+            }
+        });
+ recycles.setLayoutManager(manager);
+ recycles.setAdapter(adapter_ask);
+ 
+ 具体实现查看SoQuickAdapter文件
